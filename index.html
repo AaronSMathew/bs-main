@@ -121,7 +121,7 @@
 
     function toggleMode() {
       const button = document.getElementById("mode-toggle-button");
-      const logo = document.getElementById("logo"); // Target the logo image element
+      const logo = document.getElementById("logo");
       const projects = document.querySelectorAll(".projects .tags span.green");
       const projects1 = document.querySelectorAll(".projects .tags span.js");
       const projects2 = document.querySelectorAll(".projects .tags span.go");
@@ -137,9 +137,9 @@
       if (darkMode) {
         // Switch to dark mode
         button.src = "dark_mode_btn.svg";
-        logo.src = "logo.svg"; // Change the logo source to the dark mode logo
-        document.body.classList.remove("high-contrast"); // Remove high-contrast class if needed
-        // Remove the class that changes text color
+        logo.src = "logo.svg";
+        document.body.classList.remove("high-contrast");
+
         projects.forEach((span) => span.classList.remove("green-dark"));
         projects2.forEach((span) => span.classList.remove("go-dark"));
         projects3.forEach((span) => span.classList.remove("orange-dark"));
@@ -148,9 +148,9 @@
       } else {
         // Switch to light mode
         button.src = "light_mode_btn.svg";
-        logo.src = "nightmode.svg"; // Change the logo source to the light mode logo
-        document.body.classList.add("high-contrast"); // Add high-contrast class if needed
-        // Add the class that changes text color
+        logo.src = "nightmode.svg";
+        document.body.classList.add("high-contrast");
+
         projects.forEach((span) => span.classList.add("green-dark"));
         projects2.forEach((span) => span.classList.add("go-dark"));
         projects3.forEach((span) => span.classList.add("orange-dark"));
