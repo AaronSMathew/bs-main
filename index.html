@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlankSpace</title>
+    <link rel="icon" href="./logo.svg" type="image/x-icon" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img
+        class="mode-toggle-button"
+        id="mode-toggle-button"
+        src="dark_mode_btn.svg"
+        alt="Dark Mode"
+        onclick="toggleMode()"
+      />
+    </header>
+    <a href="https://github.com/blankspace-community">
+      <img src="logo.svg" alt="" id="logo" />
+    </a>
+    <h1>BlankSpace <span></span></h1>
+
+    <p class="sub">
+      A community for those who code and want to learn how to code.
+    </p>
+
+    <a href="https://github.com/blankspace-community" class="btn">
+      <img src="./github-mark-white.svg" alt="" />
+      <span>Community Github</span>
+    </a>
+
+    <h1>Ongoing projects</h1>
+    <section class="projects">
+      <div class="project">
+        <a href="https://github.com/adhilsalim/webquick">
+          <h3><span>1. </span>WebQuick</h3>
+        </a>
+
+        <p>Simple CLI to get started with web dev</p>
+
+        <div class="tags">
+          <span class="js">Javascript</span>
+          <span class="green">Just started</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/AmarnathCJD/gogram">
+          <h3><span>2. </span>GoGram</h3>
+        </a>
+
+        <p>Full-native implementation of MTProto protocol on Golang</p>
+
+        <div class="tags">
+          <span class="go">Go</span>
+          <span class="orange">In development for quite a while</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/blankspace-community/KTUPapers">
+          <h3><span>3. </span>KTUPapers</h3>
+        </a>
+        <p>A modern question paper repository for KTU students</p>
+
+        <div class="tags">
+          <span class="js">Javascript</span>
+          <span class="green">HTML/CSS</span>
+          <span class="green">About to start</span>
+        </div>
+      </div>
+
+      <div class="project">
+        <a href="https://github.com/AkhilLV/SpaceLearn">
+          <h3><span>4. </span>SpaceLearn</h3>
+        </a>
+        <p>
+          A glorified todo-list. Create spaced learning cards for your tasks!
+        </p>
+
+        <div class="tags">
+          <span class="js">Javascript</span>
+          <span class="go">React</span>
+          <span class="postgres">PostgreSQL</span>
+          <span class="green">Node.js</span>
+          <span class="orange">In development for quite a while</span>
+        </div>
+      </div>
+    </section>
+  </body>
+
+  <style>
+    .high-contrast {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .high-contrast .project {
+      color: #fff;
+    }
+
+    .high-contrast body {
+      color: #fff;
+    }
+
+    .high-contrast .tags span {
+      border: 1px solid rgb(17, 17, 17);
+    }
+
+    .high-contrast .btn {
+      border: 1px solid rgb(16, 16, 16);
+    }
+  </style>
+
+  <script>
+    let darkMode = true; // Initial mode is dark
+
+    function toggleMode() {
+      const button = document.getElementById("mode-toggle-button");
+      const logo = document.getElementById("logo"); // Target the logo image element
+      const projects = document.querySelectorAll(".projects .tags span.green");
+      const projects1 = document.querySelectorAll(".projects .tags span.js");
+      const projects2 = document.querySelectorAll(".projects .tags span.go");
+      const projects3 = document.querySelectorAll(
+        ".projects .tags span.orange"
+      );
+      const projects4 = document.querySelectorAll(
+        ".projects .tags span.postgres"
+      );
+
+      darkMode = !darkMode; // Toggle the mode state
+
+      if (darkMode) {
+        // Switch to dark mode
+        button.src = "dark_mode_btn.svg";
+        logo.src = "logo.svg"; // Change the logo source to the dark mode logo
+        document.body.classList.remove("high-contrast"); // Remove high-contrast class if needed
+        // Remove the class that changes text color
+        projects.forEach((span) => span.classList.remove("green-dark"));
+        projects2.forEach((span) => span.classList.remove("go-dark"));
+        projects3.forEach((span) => span.classList.remove("orange-dark"));
+        projects4.forEach((span) => span.classList.remove("postgres-dark"));
+        projects1.forEach((span) => span.classList.remove("js-dark"));
+      } else {
+        // Switch to light mode
+        button.src = "light_mode_btn.svg";
+        logo.src = "nightmode.svg"; // Change the logo source to the light mode logo
+        document.body.classList.add("high-contrast"); // Add high-contrast class if needed
+        // Add the class that changes text color
+        projects.forEach((span) => span.classList.add("green-dark"));
+        projects2.forEach((span) => span.classList.add("go-dark"));
+        projects3.forEach((span) => span.classList.add("orange-dark"));
+        projects4.forEach((span) => span.classList.add("postgres-dark"));
+        projects1.forEach((span) => span.classList.add("js-dark"));
+      }
+    }
+  </script>
+</html>
